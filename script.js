@@ -81,7 +81,9 @@ class PopEffect {
 }
 
 let bubbleTimer = 0;
-let bubbleInterval = 1000; // Milliseconds between new bubble spawns
+let minBubbleInterval = 500; // Minimum milliseconds between new bubble spawns (fast)
+let maxBubbleInterval = 2000; // Maximum milliseconds between new bubble spawns (slow)
+let bubbleInterval = Math.random() * (maxBubbleInterval - minBubbleInterval) + minBubbleInterval; // Initial random interval
 let lastTime = 0;
 let popEffects = []; // Array to store active pop effects
 
@@ -96,6 +98,8 @@ function handleBubbles() {
         const color = getRandomColor();
         bubbles.push(new Bubble(x, y, radius, speed, color));
         bubbleTimer = 0;
+        // Randomize the next bubbleInterval
+        bubbleInterval = Math.random() * (maxBubbleInterval - minBubbleInterval) + minBubbleInterval;
     } else {
         bubbleTimer += 16.67; // Assuming 60fps, roughly 1000/60 ms
     }
