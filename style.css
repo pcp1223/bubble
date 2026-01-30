@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #add8e6; /* Light blue background for sky/water */
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.game-container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: #4682b4; /* SteelBlue */
+    margin-bottom: 10px;
+}
+
+.score-display {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+#gameCanvas {
+    background-color: #e0ffff; /* Light cyan for game area */
+    border: 2px solid #4682b4;
+    display: block; /* Remove extra space below canvas */
+    margin: 0 auto;
+}
