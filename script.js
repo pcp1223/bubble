@@ -91,7 +91,8 @@ function handleBubbles() {
         const radius = Math.random() * 20 + 20; // Bubbles between 20 and 40 radius
         const x = Math.random() * (canvas.width - radius * 2) + radius; // Ensure bubble spawns fully within canvas
         const y = canvas.height + radius; // Spawn just below the canvas
-        const speed = Math.random() * 0.5 + 1; // Speed between 1 and 1.5
+        const speeds = [0.8, 1.2, 1.6, 2.0, 2.4, 2.8]; // 6 distinct speeds
+        const speed = speeds[Math.floor(Math.random() * speeds.length)];
         const color = getRandomColor();
         bubbles.push(new Bubble(x, y, radius, speed, color));
         bubbleTimer = 0;
